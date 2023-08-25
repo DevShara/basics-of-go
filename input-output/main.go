@@ -1,15 +1,27 @@
 package main
-
 import "fmt"
 
-func main() {
-	fmt.Println("Start of the program.")
+// import "frontendmasters.com/go/io/data"
 
-	name := "Alice"
+// func calculateTax(price float32)(stateTex float32, cityText float32){
+// 	stateTex = price * 0.02 
+// 	cityText = price * 0.09
+// 	return
+// }
 
-	if name != "Bob" {
-		defer panic("Unexpected name: " + name)
-	}
 
-	fmt.Println("End of the program.") // This line will not be executed
+
+func birthday(ageV *int){
+	fmt.Printf("The pointer is %v and the value is %v\n", ageV, *ageV)
+	*ageV = *ageV + 1
+}
+
+func main(){
+	age := 22
+	birthday(&age)
+	birthday(&age)
+	birthday(&age)
+
+
+	// fmt.Print(age)
 }
