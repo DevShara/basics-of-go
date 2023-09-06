@@ -26,8 +26,8 @@ func main() {
 		}
 
 		html.Execute(w, data.GetAll())
-
 	})
+	
 	server.HandleFunc("/api/exibitions", api.Get)
 
 	fs := http.FileServer(http.Dir("./public"))
