@@ -23,13 +23,17 @@
 
             
     <main>
-        {{ . }}
-        <article>
-            <h2>{{.Title}}</h2>
-            <p>{{.Description}}.</p>
-            <img src="gallery/{{.Image}}"
-                fetchpriority="high" decoding="sync">
-        </article>
+      
+        {{ range .}}
+            <article style="border-top: 10px solid {{.Color}};" 
+            class="{{if .IsOpen}}opened{{else}}closed{{end}}">
+                <h2>{{.Title}}</h2>
+                <p>{{.Description}}.</p>
+                <img src="gallery/{{.Image}}"
+                    fetchpriority="high" decoding="sync">
+            </article>
+        {{end}}
+
      
     </main>
 </body>
